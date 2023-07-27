@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/GritFeatFellowship/ml_project/mlruns/750822539062705985/e88773e0e57a4eb6946c9aa06709b22b/artifacts
+end_time: 1690391218446
+entry_point_name: ''
+experiment_id: '750822539062705985'
+lifecycle_stage: active
+run_id: e88773e0e57a4eb6946c9aa06709b22b
+run_name: Regression for house price 2023-07-26 22:51:57
+run_uuid: e88773e0e57a4eb6946c9aa06709b22b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1690391217738
+status: 3
+tags: []
+user_id: Dell
