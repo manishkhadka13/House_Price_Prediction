@@ -8,12 +8,10 @@ WORKDIR /app
 COPY . .
 
 # Install the required dependencies
-RUN pip install --upgrade pip -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Expose the port that Streamlit will be running on (replace 8501 with your desired port)
-EXPOSE 8501
+# Expose the port that gradio will be running
+EXPOSE 7860
 
-# Set the command to run your Streamlit app
-ENTRYPOINT ["gradio", "run"]
-
-CMD ["main.py"]
+# Set the command to run your gradio app
+CMD ["python", "main.py"]

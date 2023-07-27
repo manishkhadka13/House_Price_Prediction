@@ -13,9 +13,7 @@ class housefeatures(BaseModel):
     bath: int
     bhk: int
 
-model_path='./models/prediction.pkl'
-with open(model_path,'rb') as model_file:
-    model=pickle.load(model_file)
+model=pickle.load(open("./models/prediction.pkl","rb"))
 
 @app.post("/predict")
 def predict_house_price(data:housefeatures):

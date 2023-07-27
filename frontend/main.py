@@ -1,9 +1,10 @@
 import gradio as gr
 import requests
 import pandas as pd
+from gradio import components as gr,Interface
 
 # Replace with the correct endpoint URL
-API_ENDPOINT = "http://localhost:8084/predict/"
+API_ENDPOINT = "http://backend:8084/predict/"
 
 # Assuming you have a DataFrame called 'data' containing the input data
 # Extract unique locations from the 'location' column for the dropdown options
@@ -34,9 +35,9 @@ def house_price_prediction(location, total_sqft, bath, bhk):
         return f"Error: Invalid response from the server. {str(val_err)}"
 
 # Define the 'location' input as a dropdown with available options
-location_input = gr.inputs.Dropdown(unique_locations, label="Location")
+location_input = gr.Dropdown(unique_locations, label="Location")
 
-iface = gr.Interface(
+iface = Interface(
     fn=house_price_prediction,
     inputs=[location_input, "number", "number", "number"],  # Use the dropdown as the first input
     outputs="text",
@@ -44,4 +45,4 @@ iface = gr.Interface(
     description="Predict the price of a house based on location, total_sqft, bath, and bhk."
 )
 
-iface.launch()
+iface.launch(server_name="0.0.0.0",server_port=7860)

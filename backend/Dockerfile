@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install the required dependencies
-RUN pip install --upgrade pip -r requirements1.txt
+RUN pip install -r requirements.txt
 
  
 # Expose the port that FastAPI will be running on (replace 8000 with your desired port)
